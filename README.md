@@ -77,3 +77,26 @@ recommended for a good rest api
         }
     }
 ```
+let's started:
+```bash
+# init project from empty
+npm init -y
+
+touch server.js
+
+# install 2 packages and save them to file package.json
+npm install express nodemon --save
+
+# update code in file server.js
+node server.js
+
+# check server response
+curl http://localhost:5000
+# check server response with header
+curl http://localhost:5000 --include
+
+# add new file .env
+# mention secret then we do not should upload the file .env to repository. because 2 main reason(1. secret info, 2. code will be deployed to any environment)
+touch .env
+npm i dotenv --save
+```
