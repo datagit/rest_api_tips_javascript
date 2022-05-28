@@ -108,3 +108,43 @@ FOO=myfoo BAR="my bar" node server.js
 # install extension rest client in VSCode
 touch myPostMan.http
 ```
+
+issue secret and tracking request from client
+```bash
+# Helmet helps you secure your Express apps by setting various HTTP headers. It's not a silver bullet, but it can help!
+npm i helmet --save
+# header before
+  HTTP/1.1 200 OK
+  X-Powered-By: Express
+  Content-Type: text/html; charset=utf-8
+  Content-Length: 21
+  ETag: W/"15-n7oqK1hHtAnl/QKArAxeppSYqTE"
+  Date: Sat, 28 May 2022 08:47:43 GMT
+  Connection: close
+# header after
+  HTTP/1.1 200 OK
+  Content-Security-Policy: default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests
+  Cross-Origin-Embedder-Policy: require-corp
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
+  X-DNS-Prefetch-Control: off
+  Expect-CT: max-age=0
+  X-Frame-Options: SAMEORIGIN
+  Strict-Transport-Security: max-age=15552000; includeSubDomains
+  X-Download-Options: noopen
+  X-Content-Type-Options: nosniff
+  Origin-Agent-Cluster: ?1
+  X-Permitted-Cross-Domain-Policies: none
+  Referrer-Policy: no-referrer
+  X-XSS-Protection: 0
+  Content-Type: text/html; charset=utf-8
+  Content-Length: 21
+  ETag: W/"15-n7oqK1hHtAnl/QKArAxeppSYqTE"
+  Date: Sat, 28 May 2022 08:50:15 GMT
+  Connection: close
+# HTTP request logger middleware for node.js
+npm i morgan --save
+# check console log in server
+::ffff:127.0.0.1 - - [Sat, 28 May 2022 08:57:46 GMT] "GET / HTTP/1.1" 200 21 "-" "vscode-restclient"
+::ffff:127.0.0.1 - - [Sat, 28 May 2022 09:03:03 GMT] "GET /v1/users/111 HTTP/1.1" 200 8 "-" "vscode-restclient"
+```
