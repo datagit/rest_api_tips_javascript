@@ -4,6 +4,8 @@ const morgan = require('morgan');
 
 const express = require('express');
 
+const userRoute = require('./user.routes');
+
 const app = express();
 
 // check load config
@@ -21,15 +23,7 @@ app.use(helmet());
 app.use(morgan());
 
 // make new a route
-app.get('/', (req, res, next) => {
-  res.send(`this is home page 01.`);
-});
-
-app.get('/v1/users/111', (req, res, next) => {
-  console.log(req.url);
-  console.log(req.method);
-  res.send(`user 111`);
-});
+app.use('/v1', userRoute);
 
 
 // start server

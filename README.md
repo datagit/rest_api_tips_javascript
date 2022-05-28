@@ -148,3 +148,8 @@ npm i morgan --save
 ::ffff:127.0.0.1 - - [Sat, 28 May 2022 08:57:46 GMT] "GET / HTTP/1.1" 200 21 "-" "vscode-restclient"
 ::ffff:127.0.0.1 - - [Sat, 28 May 2022 09:03:03 GMT] "GET /v1/users/111 HTTP/1.1" 200 8 "-" "vscode-restclient"
 ```
+
+separate route
+```bash
+touch user.routes.js 
+```
