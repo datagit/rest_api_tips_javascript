@@ -5,6 +5,7 @@ const morgan = require('morgan');
 const express = require('express');
 
 const userRoute = require('./user.routes');
+const feedRoute = require('./feed.route');
 
 const app = express();
 
@@ -23,7 +24,8 @@ app.use(helmet());
 app.use(morgan());
 
 // make new a route
-app.use('/v1', userRoute);
+app.use('/v1/users', userRoute);
+app.use('/v1/feed', feedRoute);
 
 
 // start server
