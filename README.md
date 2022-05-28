@@ -99,4 +99,12 @@ curl http://localhost:5000 --include
 # mention secret then we do not should upload the file .env to repository. because 2 main reason(1. secret info, 2. code will be deployed to any environment)
 touch .env
 npm i dotenv --save
+
+# run process with pass some variables in command
+FOO=myfoo BAR=mybar node server.js
+FOO=myfoo BAR="my bar" node server.js
+
+# at local run by nodemon for watching and auto restart server
+# install extension rest client in VSCode
+touch myPostMan.http
 ```
