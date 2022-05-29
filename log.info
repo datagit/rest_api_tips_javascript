@@ -1,0 +1,2 @@
+2022-05-29	24:54:02 :: ba7d2c15-b7b8-49ed-9b1f-2fa41765ffce :: GET ::/v1/log :: {"user-agent":"vscode-restclient","x-my-token":"my-token","accept-encoding":"gzip, deflate","host":"localhost:8080","connection":"close","uuid":"ba7d2c15-b7b8-49ed-9b1f-2fa41765ffce"} :: {} :: {}
+2022-05-29	24:54:02 :: ba7d2c15-b7b8-49ed-9b1f-2fa41765ffce :: my message

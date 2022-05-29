@@ -1,0 +1,8 @@
+# defined variables
+@HOST = localhost
+@PORT = 8080
+@API_URL = http://{{HOST}}:{{PORT}}/
+
+####
+GET {{API_URL}}v1/log
+x-my-token: my-token

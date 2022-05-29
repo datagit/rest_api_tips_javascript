@@ -188,4 +188,12 @@ Setting express with error handler, Create HTTP errors for Express
 ```bash
 # https://www.youtube.com/watch?v=gDo-I9YgZTQ
 npm i http-errors --save
+# write log: https://www.youtube.com/watch?v=Fb2W_GBx3QY
+touch log_event_manual.js
+
+# for format a date
+npm i date-fns --save
+
+# for identify a request
+npm i uuid --save
 ```
