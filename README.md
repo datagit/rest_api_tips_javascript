@@ -201,4 +201,26 @@ npm i winston --save
 
 logger.log('info', `my message`);
 
+npm i winston-mongodb --save
+
+logger.log('error', `${req.headers['uuid']} :: my error is danger`, {
+    metadata: {
+      uuid: req.headers['uuid'],
+      id: 10,
+      name: 'product name 1',
+    },
+  });
+
+{
+	"_id" : ObjectId("62933726e52cce2eb79919e5"),
+	"timestamp" : ISODate("2022-05-29T16:04:38.370+07:00"),
+	"level" : "error",
+	"message" : "14fbedb0-1271-40d9-89f7-ea5afc1178a3 :: my error is danger",
+	"meta" : {
+		"uuid" : "14fbedb0-1271-40d9-89f7-ea5afc1178a3",
+		"id" : 10,
+		"name" : "product name 1"
+	}
+},
+
 ```

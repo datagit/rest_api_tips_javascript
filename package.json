@@ -30,6 +30,7 @@
     "morgan": "^1.10.0",
     "nodemon": "^2.0.16",
     "uuid": "^8.3.2",
-    "winston": "^3.7.2"
+    "winston": "^3.7.2",
+    "winston-mongodb": "^5.0.7"
   }
 }

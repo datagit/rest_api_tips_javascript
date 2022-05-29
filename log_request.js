@@ -3,13 +3,12 @@ const helmet = require('helmet');
 const morgan = require('morgan');
 
 const createError = require('http-errors');
-const { v4 : uuidv4 } = require('uuid');
+const { v4: uuidv4 } = require('uuid');
 
 const express = require('express');
 
 const logEvents = require('./log_event_manual');
-const logger = require('./logger.config')
-
+const logger = require('./logger.config');
 
 const app = express();
 
@@ -48,7 +47,12 @@ app.all('/v1/log', (req, res, next) => {
   req.headers['uuid'] = uuidv4();
   console.log(req.headers['x-my-token']);
   console.log(req.query);
-  logEvents(req.headers['uuid'], `${req.method} ::${req.url} :: ${JSON.stringify(req.headers)} :: ${JSON.stringify(req.query)} :: ${JSON.stringify(req.body)}`);
+  logEvents(
+    req.headers['uuid'],
+    `${req.method} ::${req.url} :: ${JSON.stringify(
+      req.headers
+    )} :: ${JSON.stringify(req.query)} :: ${JSON.stringify(req.body)}`
+  );
 
   logEvents(req.headers['uuid'], `my message`);
 
@@ -59,9 +63,21 @@ app.all('/v1/log', (req, res, next) => {
 
 app.all('/v1/logger', (req, res, next) => {
   req.headers['uuid'] = uuidv4();
-  logger.log('info', `${req.headers['uuid']} :: ${req.method} ::${req.url} :: ${JSON.stringify(req.headers)} :: ${JSON.stringify(req.query)} :: ${JSON.stringify(req.body)}`);
-  
+  logger.log(
+    'info',
+    `${req.headers['uuid']} :: ${req.method} ::${req.url} :: ${JSON.stringify(
+      req.headers
+    )} :: ${JSON.stringify(req.query)} :: ${JSON.stringify(req.body)}`
+  );
+
   logger.log('info', `${req.headers['uuid']} :: my message`);
+  logger.log('error', `${req.headers['uuid']} :: my error is danger`, {
+    metadata: {
+      uuid: req.headers['uuid'],
+      id: 10,
+      name: 'product name 1',
+    },
+  });
   res.json({
     data: req.query,
   });
