@@ -222,5 +222,8 @@ logger.log('error', `${req.headers['uuid']} :: my error is danger`, {
 		"name" : "product name 1"
 	}
 },
-
+```
+Connecting mongoose và create users model chuẩn và hiện đại
+```bash
+npm i mongoose --save
 ```
