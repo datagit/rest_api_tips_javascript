@@ -8,6 +8,7 @@ const { v4 : uuidv4 } = require('uuid');
 const express = require('express');
 
 const logEvents = require('./log_event_manual');
+const logger = require('./logger.config')
 
 
 const app = express();
@@ -56,6 +57,16 @@ app.all('/v1/log', (req, res, next) => {
   });
 });
 
+app.all('/v1/logger', (req, res, next) => {
+  req.headers['uuid'] = uuidv4();
+  logger.log('info', `${req.headers['uuid']} :: ${req.method} ::${req.url} :: ${JSON.stringify(req.headers)} :: ${JSON.stringify(req.query)} :: ${JSON.stringify(req.body)}`);
+  
+  logger.log('info', `${req.headers['uuid']} :: my message`);
+  res.json({
+    data: req.query,
+  });
+});
+
 // manual handle custom error
 // app.use((req, res, next) => {
 //   const error = new Error('My Not Found!');
@@ -79,5 +90,5 @@ app.use((error, req, res, next) => {
 
 // start server
 app.listen(PORT, () => {
-  console.log(`Server is running at ${PORT}`);
+  logger.log('info', `Server is running at ${PORT}`);
 });

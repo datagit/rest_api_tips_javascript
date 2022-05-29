@@ -1,2 +1,10 @@
 2022-05-29	24:54:02 :: ba7d2c15-b7b8-49ed-9b1f-2fa41765ffce :: GET ::/v1/log :: {"user-agent":"vscode-restclient","x-my-token":"my-token","accept-encoding":"gzip, deflate","host":"localhost:8080","connection":"close","uuid":"ba7d2c15-b7b8-49ed-9b1f-2fa41765ffce"} :: {} :: {}
 2022-05-29	24:54:02 :: ba7d2c15-b7b8-49ed-9b1f-2fa41765ffce :: my message
+2022-05-29	30:11:03 :: e44b4cfa-00a5-4c7f-86ca-dcfcd81ab473 :: GET ::/v1/log?id=10&name=myname :: {"user-agent":"vscode-restclient","x-my-token":"my-token","accept-encoding":"gzip, deflate","host":"localhost:8080","connection":"close","uuid":"e44b4cfa-00a5-4c7f-86ca-dcfcd81ab473"} :: {"id":"10","name":"myname"} :: {}
+2022-05-29	30:11:03 :: e44b4cfa-00a5-4c7f-86ca-dcfcd81ab473 :: my message
+2022-05-29	41:11:03 :: aefa191e-27e8-4d4d-a295-11e4b943b6fa :: GET ::/v1/log?id=10&name=myname :: {"user-agent":"vscode-restclient","x-my-token":"my-token","accept-encoding":"gzip, deflate","host":"localhost:8080","connection":"close","uuid":"aefa191e-27e8-4d4d-a295-11e4b943b6fa"} :: {"id":"10","name":"myname"} :: {}
+2022-05-29	41:11:03 :: aefa191e-27e8-4d4d-a295-11e4b943b6fa :: my message
+2022-05-29	23:13:03 :: b72a18a6-0383-4063-a656-6bc965957258 :: GET ::/v1/log?id=10&name=myname :: {"user-agent":"vscode-restclient","x-my-token":"my-token","accept-encoding":"gzip, deflate","host":"localhost:8080","connection":"close","uuid":"b72a18a6-0383-4063-a656-6bc965957258"} :: {"id":"10","name":"myname"} :: {}
+2022-05-29	23:13:03 :: b72a18a6-0383-4063-a656-6bc965957258 :: my message
+2022-05-29	32:13:03 :: fd6bbf65-0c92-4cc6-a4b2-1c42edc51c66 :: GET ::/v1/log?id=10&name=myname :: {"user-agent":"vscode-restclient","x-my-token":"my-token","accept-encoding":"gzip, deflate","host":"localhost:8080","connection":"close","uuid":"fd6bbf65-0c92-4cc6-a4b2-1c42edc51c66"} :: {"id":"10","name":"myname"} :: {}
+2022-05-29	32:13:03 :: fd6bbf65-0c92-4cc6-a4b2-1c42edc51c66 :: my message

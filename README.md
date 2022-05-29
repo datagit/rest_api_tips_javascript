@@ -196,4 +196,8 @@ npm i date-fns --save
 
 # for identify a request
 npm i uuid --save
+# winston logger | Log into MongoDB | File | Console | nodejs tutorial: https://www.youtube.com/watch?v=PdVlAi7nrRU
+npm i winston --save
+
+logger.log('info', `my message`);
 ```

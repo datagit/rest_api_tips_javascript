@@ -6,3 +6,7 @@
 ####
 GET {{API_URL}}v1/log
 x-my-token: my-token
+
+####
+GET {{API_URL}}v1/logger?id=10&name=myname
+x-my-token: my-token
