@@ -184,3 +184,8 @@ Parsing request RESTful api | Express.js vs Node.js
     app.use(express.urlencoded({extended: true}));
     ```
 ```
+Setting express with error handler, Create HTTP errors for Express
+```bash
+# https://www.youtube.com/watch?v=gDo-I9YgZTQ
+npm i http-errors --save
+```
