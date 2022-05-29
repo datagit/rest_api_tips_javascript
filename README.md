@@ -147,9 +147,33 @@ npm i morgan --save
 # check console log in server
 ::ffff:127.0.0.1 - - [Sat, 28 May 2022 08:57:46 GMT] "GET / HTTP/1.1" 200 21 "-" "vscode-restclient"
 ::ffff:127.0.0.1 - - [Sat, 28 May 2022 09:03:03 GMT] "GET /v1/users/111 HTTP/1.1" 200 8 "-" "vscode-restclient"
+
+# separate route
+touch user.routes.js 
 ```
 
-separate route
-```bash
-touch user.routes.js 
+Parsing request RESTful api | Express.js vs Node.js
+```bash 
+# https://www.youtube.com/watch?v=7U71q1GLEro
+- type1: query string
+  GET http://localhost:3000/users?id=10
+  express -> query string <req.query>
+- type2: route parameter
+  GET http://localhost:3000/users/10
+  express -> route parameter <req.params>
+- type3: post with content type is application/json
+  POST http://localhost:3000/users
+  Content-Type: application/json
+  {
+    "name": "my name",
+    "age": 38,
+  }
+  express -> request body: req.body
+    need using package body-parser to parse request to json
+- type4: post with content type is x-www-form-urlencoded
+  POST http://localhost:3000/users
+  Content-Type: application/x-www-form-urlencoded
+  name=my%20name&age=38
+  express -> request body: req.body
+    need using package body-parser to parse request to json
 ```

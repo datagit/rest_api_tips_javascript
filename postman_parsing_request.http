@@ -1,0 +1,24 @@
+# defined variables
+@HOST = localhost
+@PORT = 8080
+@API_URL = http://{{HOST}}:{{PORT}}/
+
+####
+GET {{API_URL}}v1/parsing?name=myName&age=39
+####
+GET {{API_URL}}v1/parsing/myName/age=39
+
+####
+POST {{API_URL}}v1/parsingPostJson
+Content-Type: application/json
+
+{
+  "name": "my name",
+  "age": 38
+}
+
+####
+POST {{API_URL}}v1/parsingPostJson
+Content-Type: application/x-www-form-urlencoded
+
+name=myname&age=38
