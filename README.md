@@ -176,4 +176,11 @@ Parsing request RESTful api | Express.js vs Node.js
   name=my%20name&age=38
   express -> request body: req.body
     need using package body-parser to parse request to json
+    ```js
+    // apply body-parser to express for Content-Type: application/json
+    app.use(express.json());
+
+    // apply body-parser to express for Content-Type: application/x-www-form-urlencoded
+    app.use(express.urlencoded({extended: true}));
+    ```
 ```

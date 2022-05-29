@@ -20,6 +20,12 @@ app.use(helmet());
 // apply middle ware morgan for tracking logger request from client
 app.use(morgan());
 
+// apply body-parser to express for Content-Type: application/json
+app.use(express.json());
+
+// apply body-parser to express for Content-Type: application/x-www-form-urlencoded
+app.use(express.urlencoded({extended: true}));
+
 // make new a route
 // query string
 app.all('/v1/parsing', (req, res, next) => {
