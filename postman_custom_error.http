@@ -4,7 +4,22 @@
 @API_URL = http://{{HOST}}:{{PORT}}/
 
 ####
-GET {{API_URL}}v1/custom-error
+GET {{API_URL}}v1/custom-error?id=1
+x-my-token: my-token
 
 ####
-GET {{API_URL}}v1/notFound
+POST {{API_URL}}v1/custom-error?id=1
+Content-Type: application/json
+x-my-token: my-token
+
+{
+  "user": "dat"
+}
+
+####
+GET {{API_URL}}v1/notFound?id=1
+x-my-token: my-token
+
+####
+GET {{API_URL}}v1/make-error-500?id=1
+x-my-token: my-token
