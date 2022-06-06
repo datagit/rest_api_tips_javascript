@@ -1,6 +1,6 @@
 # defined variables
 @HOST = localhost
-@PORT = 8080
+@PORT = 3000
 @API_URL = http://{{HOST}}:{{PORT}}/
 
 #### home page------------------------------------

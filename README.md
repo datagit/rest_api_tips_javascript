@@ -227,3 +227,38 @@ Connecting mongoose và create users model chuẩn và hiện đại
 ```bash
 npm i mongoose --save
 ```
+
+Nodejs with docker
+```bash
+# https://www.youtube.com/watch?v=jbd71z2Gdo4&t=178s
+# step1: setup components for Dockerfile 
+touch Dockerfile
+touch .dockerignore
+
+# step2: build Dockerfile to image name=docker-rest-api:1.0.0 on local
+docker build -t docker-rest-api:1.0.0 .
+
+# show docker history
+docker history docker-rest-api:1.0.0
+
+docker images
+
+# step3: run image to container
+docker run -p 3000:3000 docker-rest-api:1.0.0
+
+docker ps
+docker logs -f 69b3456448f4
+docker exec -it 69b3456448f4 bash
+  node -v # v16.15.0
+# step4: push docker to repository
+# login docker hub: https://hub.docker.com/repository/docker/datdaodev/nodesj-rest-api
+docker login --username datdaodev --password 123strong
+#cat ~/my_password.txt | docker login --username foo --password-stdin
+
+docker tag docker-rest-api:1.0.0 datdaodev/nodesj-rest-api:1.0.0
+docker push datdaodev/nodesj-rest-api:1.0.0
+
+# step5: get docker image from docker hub
+docker run --name v2-docker-rest-api -d -p 3000:3000 datdaodev/nodesj-rest-api:1.0.0
+
+```
